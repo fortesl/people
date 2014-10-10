@@ -1,0 +1,53 @@
+<div class="container">
+    <h2>Add a person</h2>
+    <form name="addPersonForm" ng-submit="addPersonForm.$valid && addPersonCtrl.addPerson()" novalidate>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <fieldset class="form-group">
+                    <label>FirstName:</label>
+                    <input type="text" ng-model="addPersonCtrl.person.firstName" class="form-control" placeholder="Enter first name" required>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <fieldset class="form-group">
+                    <label>MiddleName:</label>
+                    <input type="text" ng-model="addPersonCtrl.person.middleName" class="form-control" placeholder="Enter middle name">
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <fieldset class="form-group">
+                    <label>LastName:</label>
+                    <input type="text" ng-model="addPersonCtrl.person.lastName" class="form-control" placeholder="Enter last name" required>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <fieldset class="form-group">
+                    <label>BirthDate: </label>
+                    <input type="date" ng-model="addPersonCtrl.person.birthDate" class="form-control" placeHolder="yyyy-mm-dd" required>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <fieldset class="form-group">
+                    <label>EmailAddress:</label>
+                    <input type="email" ng-model="addPersonCtrl.person.emailAddress" class="form-control" placeholder="Enter email address" required>
+                </fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-3">
+                <fieldset class="form-group">
+                    <input ng-disabled="addPersonForm.$invalid" class="btn btn-primary pull-right" type="submit" value="Submit"/>
+                </fieldset>
+            </div>
+        </div>
+    </form>
+    <!-- end addPersonForm -->
+</div>

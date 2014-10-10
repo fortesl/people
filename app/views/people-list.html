@@ -1,0 +1,12 @@
+<!-- People list -->
+<div class="container list-group" ng-show="peopleListCtrl.peopleList.length">
+    <a ng-href="/#/addperson" title="add person"><span class="glyphicon glyphicon-plus-sign"></span></a>
+    <div class="list-group-item" ng-repeat="person in peopleListCtrl.peopleList" ng-hide="person.banned" ng-class="{odd: $odd}">
+        <h3> <a href="/#/people/{{ person.id }}"> {{ person.firstName }} </a> {{ person.lastName}} </h3>
+    </div>
+</div>
+<!-- end listgroup -->
+
+<div class="container text-center  text-danger bg-warning text-capitalize" ng-hide="peopleListCtrl.peopleList.length">
+    <span>SPOOKY - Nobody in here!</span>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "mypeople",
+  "version": "0.0.0",
+  "description": "mypeople",
+  "authors": [
+    "Luis Fortes"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.2.0",
+    "angular": "~1.2.25",
+    "angular-route": "~1.2.25"
+  }
+}
