@@ -1,4 +1,4 @@
-After cloning, move to the "people" folder and install grunt dependencies with npm command:
+After cloning, move to the "people" folder and install grunt dependencies with the npm command:
 
 $: <b>npm install</b>
 
