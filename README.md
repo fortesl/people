@@ -8,7 +8,7 @@ Either
 
 <ol>
 <li>
-. Run with source (unoptimized) files from the "app" folder
+Run with source (unoptimized) files from the "app" folder
 
 $: <b>grunt serve</b>
 </li>
@@ -16,7 +16,7 @@ $: <b>grunt serve</b>
 Or
 
 <li>
-. Run with optimized (concated, minimized, pre-cached) from the "dist" folder
+Run with optimized (concated, minimized, pre-cached) from the "dist" folder
 
 $: <b>grunt dist</b>           
 </li>
