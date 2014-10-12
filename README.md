@@ -1,10 +1,18 @@
-Run the App in 2 steps -
-========================
+After cloning, move to the "people" folder and from the command line run the app as follows: 
 
-<ol>
+Either
 
-<li>Clone the project</li>
+1. Run with source (unoptimized) files from the "app" folder
+============================================================
+$: <b>grunt serve</b>
 
-<li>From the MyPeople folder, run the command: <b>grunt serve</b>
 
-</ol>
+Or
+
+
+2. Run the app with optimized (concated, minimized, pre-cached) from the "dist" folder
+======================================================================================
+$: <b>grunt dist</b>           
+
+
+("dist" folder and optimized resources are created dynamically with several grunt sub-tasks).
