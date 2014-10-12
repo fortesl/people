@@ -1,4 +1,8 @@
-After cloning, move to the "people" folder and from the command line run the app as follows: 
+After cloning, move to the "people" folder and install grunt dependencies with npm command:
+
+$: <b>npm install</b>
+
+and from the command line run the app as follows: 
 
 Either
 
