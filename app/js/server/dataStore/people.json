@@ -4,7 +4,7 @@
         "firstName": "Joe",
         "middleName": "Super",
         "lastName": "Flaco",
-        "birthDate": "04/05/1990",
+        "birthDate": "1990/04/05",
         "emailAddress": "joe.flaco@ravens.com"
     },
     {
@@ -12,7 +12,7 @@
         "firstName": "Ray",
         "middleName": "backer",
         "lastName": "Lewis",
-        "birthDate": "04/05/1982",
+        "birthDate": "1982/12/15/",
         "emailAddress": "ray.lewis@ravens.com"
     },
     {
@@ -20,7 +20,16 @@
         "firstName": "John",
         "middleName": "Couch",
         "lastName": "Harbaugh",
-        "birthDate": "04/05/1971",
+        "birthDate": "1971/01/22",
         "emailAddress": "john.harbaugh@ravens.com"
+    },
+    {
+        "id": 1004,
+        "firstName": "Steve",
+        "middleName": "Receiver",
+        "lastName": "Smith",
+        "birthDate": "1985/08/13",
+        "emailAddress": "steve.smith@ravens.com",
+        "banned": true
     }
 ]

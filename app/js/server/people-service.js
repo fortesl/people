@@ -10,45 +10,9 @@
 
     var app = angular.module('people-service', []);
 
-    app.factory('PeopleService', [function($http) {
+    app.factory('PeopleService', ['$http', function($http) {
 
-        //list of people hard-coded for now
-        var peopleList =
-            [
-                {
-                    "id": 1001,
-                    "firstName": "Joe",
-                    "middleName": "Super",
-                    "lastName": "Flaco",
-                    "birthDate": "1990/04/05",
-                    "emailAddress": "joe.flaco@ravens.com"
-                },
-                {
-                    "id": 1002,
-                    "firstName": "Ray",
-                    "middleName": "backer",
-                    "lastName": "Lewis",
-                    "birthDate": "1982/12/15/",
-                    "emailAddress": "ray.lewis@ravens.com"
-                },
-                {
-                    "id": 1003,
-                    "firstName": "John",
-                    "middleName": "Couch",
-                    "lastName": "Harbaugh",
-                    "birthDate": "1971/01/22",
-                    "emailAddress": "john.harbaugh@ravens.com"
-                },
-                {
-                    "id": 1004,
-                    "firstName": "Steve",
-                    "middleName": "Receiver",
-                    "lastName": "Smith",
-                    "birthDate": "1985/08/13",
-                    "emailAddress": "steve.smith@ravens.com",
-                    "banned": true
-                }
-            ];
+        var self = this;
 
         var getAge = function(birthDay) {
             var today = new Date();
@@ -64,7 +28,7 @@
         var getPerson = function(personId) {
             var id = parseInt(personId);
             var person = null;
-            angular.forEach(peopleList, function(p) {
+            angular.forEach(self.peopleList, function(p) {
                 if (p.id === id) {
                     person = p;
                 }
@@ -72,15 +36,20 @@
             return person;
         };
 
-        var getNewPersonId = function() {
-            var lastPerson = peopleList[peopleList.length - 1];
-            return lastPerson.id + 1;
-        };
-
         return { //factory object
 
             people: function() {
-                return peopleList;
+                if (!self.peopleList) {
+                    var promise = $http.get('js/server/dataStore/people.json');
+                    promise.success(function (response) {
+                        self.peopleList = response;
+                        self.lastPersonId = self.peopleList[self.peopleList.length - 1].id;
+                    });
+                    return promise;
+                }
+                else {
+                    return self.peopleList;
+                }
             },
 
             person: function(personId) {
@@ -95,10 +64,9 @@
             },
 
             addPerson: function(person) {
-                var personId = getNewPersonId();
-                person.id = personId;
-                peopleList.push(person);
-                return personId;
+                person.id = ++self.lastPersonId;
+                self.peopleList.push(person);
+                return person.id;
             }
 
         }; //factory object

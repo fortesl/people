@@ -13,12 +13,19 @@
     app.controller('PeopleListController', ['PeopleService', '$rootScope', function(PeopleService, $rootScope) {
 
         var self = this;
-
         self.peopleList = [];
 
-        self.peopleList = PeopleService.people();
-
         $rootScope.appTitle = 'MyPeople';
+
+        var people = PeopleService.people();
+        if (angular.isArray(people)) {
+            self.peopleList = people;
+        }
+        else {
+            PeopleService.people().success(function (response) {
+                self.peopleList = response;
+            });
+        }
 
     }]);
 
