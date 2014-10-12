@@ -6,7 +6,7 @@ and from the command line run the app as follows:
 
 Either
 
-1. <u>Run with source (unoptimized) files from the "app" folder</u>
+1. Run with source (unoptimized) files from the "app" folder
 
 $: <b>grunt serve</b>
 
@@ -14,7 +14,7 @@ $: <b>grunt serve</b>
 Or
 
 
-2. <u>Run with optimized (concated, minimized, pre-cached) from the "dist" folder</u>
+2. Run with optimized (concated, minimized, pre-cached) from the "dist" folder
 
 $: <b>grunt dist</b>           
 
